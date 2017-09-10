@@ -1,0 +1,14 @@
+﻿@using WebApplication6_13_2_.Models
+@model indexViewModel
+    <form action="/home/index">
+        <input type="text" name="text" class="form-control" placeholder="Enter word" value="@Model.text" />
+        <button class="btn btn-primary">Submit</button>
+    </form>
+@if(Model.text != null)
+{
+    foreach(KeyValuePair<char,int> c in Model.AlphabetCount)
+    {
+        <li>There are @c.Value @c.Key's in @Model.text</li>
+    }
+
+}
